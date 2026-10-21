@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products - ShopEase</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>ShopEase</span>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search for products...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="header-icons">
+            <a href="#"><i class="fa-regular fa-heart"></i></a>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <button id="theme-toggle">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+      <a href="index.html#categories">Categories</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- Page Heading -->
+    <section class="products-banner">
+        <h1>Our Products</h1>
+        <p>Discover your favourites at amazing prices.</p>
+    </section>
+
+    <!-- Products Page -->
+    <main class="products-page">
+
+        <!-- Sidebar -->
+        <aside class="filter-sidebar">
+            <h2>Filters</h2>
+
+            <div class="filter-group">
+                <h3>Categories</h3>
+
+                <label>
+                    <input type="checkbox">
+                    Electronics
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Clothing
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Accessories
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Footwear
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Price Range</h3>
+
+                <label>
+                    <input type="radio" name="price">
+                    Under ₹500
+                </label>
+
+                <label>
+                    <input type="radio" name="price">
+                    ₹500 - ₹1,500
+                </label>
+
+                <label>
+                    <input type="radio" name="price">
+                    ₹1,500 - ₹3,000
+                </label>
+
+                <label>
+                    <input type="radio" name="price">
+                    Above ₹3,000
+                </label>
+            </div>
+        </aside>
+
+        <!-- Product Listing -->
+        <section class="product-listing">
+
+            <div class="listing-heading">
+                <h2>All Products</h2>
+
+                <select aria-label="Sort products">
+                    <option>Sort by: Recommended</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Newest First</option>
+                </select>
+            </div>
+
+            <div class="listing-grid">
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" alt="Red sports shoes">
+                    <h3>Sports Shoes</h3>
+                    <p class="rating">★★★★★</p>
+                    <p class="price">₹1,499</p>
+                    <a href="#" class="cart-btn">View Product</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Classic wristwatch">
+                    <h3>Classic Watch</h3>
+                    <p class="rating">★★★★★</p>
+                    <p class="price">₹2,199</p>
+                    <a href="#" class="cart-btn">View Product</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="Wireless headphones">
+                    <h3>Wireless Headphones</h3>
+                    <p class="rating">★★★★☆</p>
+                    <p class="price">₹1,899</p>
+                    <a href="#" class="cart-btn">View Product</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=500&q=80" alt="Fashion handbag">
+                    <h3>Fashion Handbag</h3>
+                    <p class="rating">★★★★★</p>
+                    <p class="price">₹1,299</p>
+                    <a href="#" class="cart-btn">View Product</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=500&q=80" alt="Digital camera">
+                    <h3>Digital Camera</h3>
+                    <p class="rating">★★★★★</p>
+                    <p class="price">₹4,999</p>
+                    <a href="#" class="cart-btn">View Product</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80" alt="Casual T-shirt">
+                    <h3>Casual T-Shirt</h3>
+                    <p class="rating">★★★★☆</p>
+                    <p class="price">₹699</p>
+                    <a href="#" class="cart-btn">View Product</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+<script src="script.js"></script>
+</body>
+</html>

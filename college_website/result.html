@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    
+
+</head>
+<body>
+    <header >
+     <div class="header_board">
+            <div>
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/71/GCET_Jammu_Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" alt="collegelogo">
+           </div>
+        <div class="header_dash">
+
+           <div >
+            <h1>GCET JAMMU</h1>
+            <p> Student Portal</p>
+            </div>
+            <div>
+            <h1> Drishti Raina</h1>
+            <p> Roll no:2512010</p>
+            </div>
+    </div>
+    </div>
+    </header>
+    <div class="dashboard-container">
+    <sidebar >
+        <ul class="sidebar">
+            <li> <a href="dashboard.html"> 🏠 Dashboard</a></li>
+            <li> <a href="profile.html"> 👤 My Profile</a></li>
+            <li> <a href="courses.html"> 📖 My courses</a></li>
+            
+            <li> <a href="result.html"> 📝 My Results</a></li>
+           
+           
+            <li id="logout"> <a href="index.html"> ➡️  Log out</a></li>
+
+        </ul>
+
+    </sidebar>
+    <main class="main_results">
+            <div class="results_head">Semester Results</div>
+            <div class="line"></div>
+
+            <!-- Semester Results Card -->
+            <div class="result-card">
+                <h3>Published Results</h3>
+
+                <!-- 3rd Semester -->
+                <div class="result-row">
+                    <div class="sem-badge">3rd Semester</div>
+                    <div class="stats">SGPA: <strong>8.2</strong> | Percentage: <strong>78.5%</strong></div>
+                    <span class="status-pass">Pass</span>
+                    <a href="courses.html#semester3" class="btn-view">View Details</a>
+                </div>
+
+                <!-- 2nd Semester -->
+                <div class="result-row">
+                    <div class="sem-badge">2nd Semester</div>
+                    <div class="stats">SGPA: <strong>7.9</strong> | Percentage: <strong>76.3%</strong></div>
+                    <span class="status-pass">Pass</span>
+                    <a href="courses.html#semester2" class="btn-view">View Details</a>
+                </div>
+
+                <!-- 1st Semester -->
+                <div class="result-row">
+                    <div class="sem-badge">1st Semester</div>
+                    <div class="stats">SGPA: <strong>7.6</strong> | Percentage: <strong>74.1%</strong></div>
+                    <span class="status-pass">Pass</span>
+                    <a href="courses.html#semester1" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- CGPA Summary Card -->
+            <div class="result-card">
+                <h3>CGPA Summary</h3>
+                <div class="cgpa-grid">
+                    <div class="cgpa-box">
+                        <span>Total Semesters</span>
+                        <strong>3</strong>
+                    </div>
+                    <div class="cgpa-box">
+                        <span>Current CGPA</span>
+                        <strong>7.90</strong>
+                    </div>
+                    <div class="cgpa-box">
+                        <span>Overall Percentage</span>
+                        <strong>76.3%</strong>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
