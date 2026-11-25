@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
 
 </head>
@@ -20,9 +22,12 @@
             <h1>GCET JAMMU</h1>
             <p> Student Portal</p>
             </div>
-            <div>
+            <div class="header-user">
+                <img class="header-user-img" src="Drishti.png.jpg" alt="Drishti Raina">
+                <div>
             <h1> Drishti Raina</h1>
             <p> Roll no:2512010</p>
+            </div>
             </div>
     </div>
     </div>
@@ -93,7 +98,70 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Marks Calculator -->
+            <div class="result-card" id="marks-calc">
+                <h3>Marks Calculator</h3>
+                <div id="calc-rows"></div>
+                <div class="calc-error" id="calc-error"></div>
+                <div class="calc-actions">
+                    <button type="button" id="calc-add">+ Add Subject</button>
+                    <button type="button" id="calc-go">Calculate</button>
+                    <button type="button" id="calc-reset" class="secondary">Reset</button>
+                </div>
+                <div class="cgpa-grid" id="calc-out" style="display:none;">
+                    <div class="cgpa-box"><span>Total Marks</span><strong id="o-total">-</strong></div>
+                    <div class="cgpa-box"><span>Percentage</span><strong id="o-pct">-</strong></div>
+                    <div class="cgpa-box"><span>Grade</span><strong id="o-grade">-</strong></div>
+                    <div class="cgpa-box"><span>Result</span><strong id="o-res">-</strong></div>
+                </div>
+            </div>
         </main>
     </div>
+    <script>
+        const rowsBox = document.getElementById("calc-rows");
+        function addRow(name) {
+            const r = document.createElement("div");
+            r.className = "calc-row";
+            r.innerHTML = '<input type="text" placeholder="Subject" class="c-name">' +
+                '<input type="number" placeholder="Obtained" min="0" class="c-got">' +
+                '<input type="number" placeholder="Maximum" min="1" value="100" class="c-max">' +
+                '<button type="button" class="calc-del" aria-label="Remove">&times;</button>';
+            if (name) r.querySelector(".c-name").value = name;
+            r.querySelector(".calc-del").onclick = () => { if (rowsBox.children.length > 1) r.remove(); };
+            rowsBox.appendChild(r);
+        }
+        ["Subject 1", "Subject 2", "Subject 3", "Subject 4", "Subject 5"].forEach(addRow);
+        document.getElementById("calc-add").onclick = () => addRow("Subject " + (rowsBox.children.length + 1));
+        document.getElementById("calc-reset").onclick = () => {
+            rowsBox.innerHTML = ""; ["Subject 1", "Subject 2", "Subject 3", "Subject 4", "Subject 5"].forEach(addRow);
+            document.getElementById("calc-out").style.display = "none";
+            document.getElementById("calc-error").textContent = "";
+        };
+        document.getElementById("calc-go").onclick = () => {
+            const err = document.getElementById("calc-error");
+            let total = 0, max = 0, ok = true, failed = false;
+            err.textContent = "";
+            rowsBox.querySelectorAll(".calc-row").forEach(r => {
+                const g = r.querySelector(".c-got"), m = r.querySelector(".c-max");
+                const gv = parseFloat(g.value), mv = parseFloat(m.value);
+                g.classList.remove("bad"); m.classList.remove("bad");
+                if (isNaN(mv) || mv <= 0) { m.classList.add("bad"); ok = false; return; }
+                if (isNaN(gv) || gv < 0 || gv > mv) { g.classList.add("bad"); ok = false; return; }
+                total += gv; max += mv;
+                if (gv / mv < 0.4) failed = true;
+            });
+            if (!ok) { err.textContent = "Enter marks for every subject (obtained must be between 0 and maximum)."; return; }
+            const pct = total / max * 100;
+            const grade = pct >= 90 ? "A+" : pct >= 80 ? "A" : pct >= 70 ? "B+" : pct >= 60 ? "B" : pct >= 50 ? "C" : pct >= 40 ? "D" : "F";
+            document.getElementById("o-total").textContent = total + " / " + max;
+            document.getElementById("o-pct").textContent = pct.toFixed(2) + "%";
+            document.getElementById("o-grade").textContent = grade;
+            document.getElementById("o-res").textContent = failed || pct < 40 ? "Fail" : "Pass";
+            document.getElementById("calc-out").style.display = "";
+        };
+    </script>
+    <script src="script.js"></script>
+
 </body>
 </html>

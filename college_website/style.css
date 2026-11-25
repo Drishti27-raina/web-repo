@@ -1,6 +1,11 @@
  .header-wrapper{
     display: flex;
     justify-content: space-between;
+
+ }
+ .header-wrapper h2{
+    display:inline;
+
  }
 
 *{
@@ -252,6 +257,9 @@ margin:10px 0 5px;
     color:rgb(99, 1, 1);
     
 }
+/* ===== Login / Register / Forgot password ===== */
+
+/* Page + card */
 .login-body{
     display:flex;
     justify-content: center;
@@ -259,70 +267,105 @@ margin:10px 0 5px;
     height:100vh;
     background:url("https://c4.wallpaperflare.com/wallpaper/30/867/718/angle-college-education-footpath-wallpaper-preview.jpg") no-repeat;
     background-size: cover;
-
-}  
+}
 .login-container{
     background:transparent;
     backdrop-filter: blur(30px);
     border:1px solid rgb(43, 3, 5);
     border-radius: 10px;
-    height: 440px;
+    min-height: 440px;
     width: 400px;
+    padding:25px 30px;
+    box-sizing:border-box;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow:0px 0px 10px 10px rgba(232, 183, 183, 0.5);
-
 }
-.input-box{
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
-    border-bottom: 2px solid rgb(43, 3, 5);
+.login-container form{
+    width:100%;
 }
 .login-container h1{
     color:rgb(224, 217, 215);
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     font-size: 30px;
     font-weight: 600;
 }
+
+/* Fields */
+.input-box{
+    width: 100%;
+    margin: 12px 0;
+    padding-bottom:2px;
+    border-bottom: 2px solid rgb(43, 3, 5);
+}
+.input-box label{
+    color:rgb(251, 249, 248);
+    font-size: 20px;
+    font-weight: 500;
+}
 .input-box input{
     width:100%;
-    height:100%;
+    height:36px;
     background:transparent;
     border:none;
     outline:none;
-    font-size:1 em;
     font-weight:600;
     color:rgb(242, 238, 236);
     padding:0 35px 0 5px;
 }
 
-.input-box  label{
-  color:rgb(251, 249, 248);
-  font-size: 20px;
-  font-weight: 500;
+/* Show/hide password eye */
+.password-wrap{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+.password-wrap input{
+    display:block;
+}
+.toggle-password{
+    position:absolute;
+    right:5px;
+    top:0;
+    bottom:0;
+    margin:auto 0;
+    height:22px;
+    background:transparent;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    color:rgb(242, 238, 236);
+    padding:0;
+    display:flex;
 }
 
+/* Remember me / forgot password */
 .remember-forgot{
     font-size:.9em;
     color:rgb(246, 239, 237);
     font-weight: 500;
-    margin: -15px 0 15px;
+    margin: 5px 0 15px;
     display:flex;
     justify-content: space-between;
+    align-items:center;
 }
-rememeber-forgot label input{
-    margin-right: 3px;
+.remember-forgot input{
+    margin:0 4px 0 0;
+    vertical-align:middle;
 }
-.remember-forgot a{
+.remember-forgot a,
+.register p a{
     color:rgb(246, 239, 237);
     text-decoration: none;
 }
-.remember-forgot a:hover{
+.remember-forgot a:hover,
+.register p a:hover{
     text-decoration: underline;
 }
+
+/* Button + "register / login here" link */
 .login-button{
     width: 100%;
     height: 50px;
@@ -334,7 +377,6 @@ rememeber-forgot label input{
     font-weight:600;
     color:rgb(224, 217, 215);
     border-radius: 5px;
-    cursor: pointer;
 }
 .register{
     font-size:.9em;
@@ -344,13 +386,18 @@ rememeber-forgot label input{
     display:flex;
     justify-content: center;
 }
-.register p a{
-    color:rgb(246, 239, 237);
-    text-decoration: none;
+
+/* Register page: taller form, so the page scrolls on short screens */
+.register-body{
+    height:auto;
+    min-height:100vh;
+    padding:20px 0;
+    box-sizing:border-box;
 }
-.register p a:hover{
-    text-decoration: underline;
+.login-container.register-container h1{
+    margin-bottom:10px;
 }
+
 .contact-section table{
     width:95%;
     margin:40px auto;
@@ -1201,3 +1248,246 @@ body {
         word-break: break-word;
     }
 }
+.email-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  color: #333333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.email-dropdown li {
+  padding: 10px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.email-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.email-dropdown li:hover {
+  background-color: #f0f4ff;
+}
+
+.delete-email {
+  color: red;
+  font-weight: bold;
+  padding: 0 6px;
+}
+.new_password{
+    
+}
+
+
+
+#theme-toggle{
+    height: 50px;
+    width:50px;
+    border-radius: 50%;
+    border:none;
+   
+    align-self:center;
+    /* background-color: #8d737e76; */
+    
+    
+
+}
+
+
+
+/* =====================================================
+   DARK MODE  (body gets class "dark" from script.js)
+   page #0f172a | cards #1e293b | raised #273449 | hover #334155
+   border #334155 | text #e2e8f0 | muted #94a3b8 | accent #38bdf8
+   ===================================================== */
+
+/* ---- base ---- */
+body.dark{ background-color:#0f172a; color:#e2e8f0; }
+body.dark a{ color:#38bdf8; }
+body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark label{ color:#f1f5f9; }
+
+/* ---- header, logo, navbar, footer ---- */
+body.dark header{ background-color:#0b1220; border-color:#334155; }
+body.dark .head, body.dark .head h1, body.dark .head h2{ color:#e2e8f0; }
+body.dark .header-logo img{
+    width:120px; height:120px; border-radius:50%; object-fit:contain;
+    background-color:#fff; padding:6px; border:3px solid #334155; margin:8px 0 8px 16px;
+}
+body.dark .navbar{ background-color:#1e293b; border-top:1px solid #334155; }
+body.dark .navbar li a{ color:#cbd5e1; }
+body.dark .navbar li a:hover{
+    color:#fff; background-color:#334155; border-bottom:2px solid #38bdf8;
+}
+body.dark #footer, body.dark footer{ background-color:#0b1220; color:#94a3b8; border-top:1px solid #334155; }
+body.dark #theme-toggle{ background-color:#334155; color:#facc15; cursor:pointer; }
+body.dark #theme-toggle:hover{ background-color:#475569; }
+
+/* ---- buttons (all of them share one look) ---- */
+body.dark .login-button,
+body.dark .about a,
+body.dark .admission button,
+body.dark .profile_head button,
+body.dark .pro_img button,
+body.dark .courses_head button,
+body.dark .btn-view,
+body.dark .personal_info a{
+    background-color:#38bdf8; color:#0f172a; border-color:#38bdf8;
+}
+body.dark .login-button a{ color:#0f172a; }
+body.dark .login-button:hover,
+body.dark .about a:hover,
+body.dark .admission button:hover,
+body.dark .profile_head button:hover,
+body.dark .pro_img button:hover,
+body.dark .courses_head button:hover,
+body.dark .btn-view:hover,
+body.dark .personal_info a:hover{
+    background-color:#7dd3fc; color:#0f172a;
+}
+body.dark .navbar li button{ background-color:#334155; }
+body.dark .navbar li button a{ color:#e2e8f0; }
+
+/* ---- home page ---- */
+body.dark section.about{ background-color:#1e293b; color:#cbd5e1; }
+body.dark section.about p{ color:#cbd5e1; }
+body.dark .welcome-text{ background:rgba(2,6,23,0.75); color:#fff; }
+body.dark .welcome-text h1, body.dark .welcome-text p{ color:#fff; }
+
+/* ---- about / faculty / gallery / students ---- */
+body.dark .about-content{ background-color:transparent; color:#cbd5e1; }
+body.dark .info-box h2{ background-color:#273449; color:#f1f5f9; }
+body.dark .info-box p{ background-color:#1e293b; color:#cbd5e1; }
+body.dark .faculty-box, body.dark .box{ background-color:#1e293b; border:1px solid #334155; }
+body.dark .faculty-box h3{ color:#f1f5f9; }
+body.dark .faculty-box p{ color:#94a3b8; }
+body.dark .student-menu a{ background-color:#1e293b; color:#cbd5e1; }
+body.dark .student-menu a:hover{ background-color:#334155; color:#fff; }
+body.dark .student-image p{ color:#cbd5e1; }
+
+/* ---- contact table ---- */
+body.dark .contact-section table{ background-color:#1e293b; }
+body.dark .contact-section th{ background-color:#273449; color:#f1f5f9; border-color:#334155; }
+body.dark .contact-section td{ background-color:#1e293b; color:#cbd5e1; border-color:#334155; }
+body.dark .contact-section tr:hover td{ background-color:#273449; }
+
+/* ---- admission form ---- */
+body.dark .admission{ background-color:rgba(15,23,42,0.88); }
+body.dark .admission label{ color:#e2e8f0; }
+body.dark .admission input, body.dark .admission select, body.dark .admission textarea{
+    background-color:#0f172a; color:#e2e8f0; border:1px solid #334155;
+}
+
+/* ---- inputs everywhere ---- */
+body.dark input, body.dark select, body.dark textarea{ color:#e2e8f0; }
+body.dark input:focus, body.dark select:focus, body.dark textarea:focus{
+    outline:none; border-color:#38bdf8; box-shadow:0 0 0 2px rgba(56,189,248,0.3);
+}
+body.dark ::placeholder{ color:#64748b; }
+body.dark option{ background-color:#1e293b; color:#e2e8f0; }
+
+/* ---- dashboard / profile / courses / result layout ---- */
+body.dark .header_board, body.dark .header_board img{ background-color:#0b1220; }
+body.dark .header_dash{ color:#e2e8f0; }
+body.dark .sidebar{ background-color:#1e293b; border-right:1px solid #334155; }
+body.dark .sidebar li a{ color:#cbd5e1; }
+body.dark .sidebar a:hover{ background-color:#334155; color:#fff; }
+body.dark .main_dash, body.dark .main_pro,
+body.dark .main_courses, body.dark .main_results{ background-color:#0f172a; }
+body.dark .icons h3{ background-color:#273449; color:#f1f5f9; }
+body.dark .personal_info, body.dark .Recent_info{ background-color:#1e293b; color:#cbd5e1; }
+body.dark .profile_head h3, body.dark .courses_head h3, body.dark .results_head{ color:#f1f5f9; }
+body.dark .pro_info{ background-color:#1e293b; }
+body.dark .pro_info th{ background-color:#273449; color:#f1f5f9; border-color:#334155; }
+body.dark .pro_info td{ background-color:#1e293b; color:#cbd5e1; border-color:#334155; }
+
+/* ---- courses dropdown ---- */
+body.dark .dropbtn{ background-color:#1e293b; color:#e2e8f0; border:1px solid #334155; }
+body.dark .dropdown-content{ background-color:#1e293b; border:1px solid #334155; box-shadow:0 8px 16px rgba(0,0,0,0.5); }
+body.dark .dropdown-content a{ color:#cbd5e1; }
+body.dark .dropdown-content a:hover{ background-color:#334155; color:#38bdf8; }
+
+/* ---- results ---- */
+body.dark .result-card{ background:#1e293b; border:1px solid #334155; }
+body.dark .result-card h3, body.dark .sem-badge{ color:#38bdf8; }
+body.dark .result-row{ background:#273449; }
+body.dark .stats{ color:#94a3b8; }
+body.dark .status-pass{ background-color:rgba(34,197,94,0.15); color:#4ade80; }
+body.dark .cgpa-box{ background:#1e293b; border:1px solid #334155; }
+body.dark .cgpa-box span{ color:#94a3b8; }
+body.dark .cgpa-box strong{ color:#38bdf8; }
+
+/* ---- email suggestion dropdown ---- */
+body.dark .email-dropdown{ background:#1e293b; color:#e2e8f0; border:1px solid #334155; }
+body.dark .email-dropdown li:hover{ background-color:#334155; }
+
+/* Theme button inside the portal header (dashboard, profile, courses, result) */
+.header_board #theme-toggle{
+    flex-shrink: 0;
+    margin: 0 20px;
+    background-color: #f5d6e2;
+    cursor: pointer;
+}
+body.dark .header_board{ border-bottom: 1px solid #334155; }
+
+/* Student photo + name in the portal header */
+.header-user{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.header-user h1{
+    font-size: 24px;
+    line-height: 1.2;
+}
+.header_board .header-user-img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    background-color: transparent;
+    border: 2px solid #f5d6e2;
+}
+body.dark .header_board .header-user-img{
+    background-color: transparent;
+    border-color: #38bdf8;
+}
+
+/* ---- gallery lightbox ---- */
+.photo .box img{ cursor:zoom-in; }
+.lightbox{ position:fixed; inset:0; background:rgba(0,0,0,.88); display:none; align-items:center; justify-content:center; z-index:9999; }
+.lightbox.open{ display:flex; }
+.lightbox img{ width:96vw; height:94vh; object-fit:contain; border-radius:6px; box-shadow:0 10px 40px rgba(0,0,0,.6); }
+.lightbox button{ position:absolute; background:rgba(255,255,255,.15); color:#fff; border:none; font-size:2rem; width:48px; height:48px; border-radius:50%; cursor:pointer; }
+.lightbox button:hover{ background:rgba(255,255,255,.3); }
+.lightbox .lb-close{ top:20px; right:24px; }
+.lightbox .lb-prev{ left:20px; top:50%; transform:translateY(-50%); }
+.lightbox .lb-next{ right:20px; top:50%; transform:translateY(-50%); }
+
+/* ---- marks calculator ---- */
+.calc-row{ display:grid; grid-template-columns:2fr 1fr 1fr auto; gap:10px; margin-bottom:10px; align-items:center; }
+.calc-row input{ padding:8px 10px; border:1px solid #cbd5e1; border-radius:6px; font-size:14px; width:100%; box-sizing:border-box; }
+.calc-row input.bad{ border-color:#e53935; }
+.calc-row .calc-del{ background:#e53935; color:#fff; border:none; border-radius:6px; padding:8px 12px; cursor:pointer; }
+.calc-actions{ display:flex; gap:10px; flex-wrap:wrap; margin:12px 0; }
+.calc-actions button{ padding:9px 18px; border:none; border-radius:6px; cursor:pointer; background:#1e3a8a; color:#fff; font-size:14px; }
+.calc-actions button.secondary{ background:#64748b; }
+.calc-error{ color:#e53935; font-size:13px; min-height:18px; }
+body.dark .calc-row input{ background:#0f172a; color:#f1f5f9; border-color:#334155; }
+@media (max-width:600px){ .calc-row{ grid-template-columns:1fr 1fr; } .calc-row input:first-child{ grid-column:1 / -1; } }

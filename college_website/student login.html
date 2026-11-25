@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css?v=3">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
  </head>
  <body class="login-body">
     
     <div class="login-container">
         <h1>Student Login</h1>
-        <form action="dashboard.html" method="get">
+        <form   action="dashboard.html" novalidate>
         <div class="input-box">
-            <div >
-            <label for="Email">Email:</label>
-            </div>
+  <div>
+    <label for="Email">Email:</label>
+  </div>
 
-            <div>
-            <input type="email" id="Email" placeholder="Enter your email" name="Email" required>
-           </div>
-        </div>
+  <div class="email-wrapper" style="position: relative;">
+    <input type="email" id="Email" placeholder="Enter your email" name="Email" autocomplete="off" required>
+    <ul id="email-dropdown" class="email-dropdown"></ul>
+  </div>
+</div>
+
         <div class="input-box"> 
             <div> 
             <label for="password">Password:</label>
@@ -29,15 +33,17 @@
             </div>
         </div>     
             <div class="remember-forgot">
-               <label> <input type="checkbox" >Remember me</label>
-                <a href="#" class="forgot-password">Forgot password?</a>
+               <label for="remember"> <input type="checkbox" id="remember" >Remember me</label>
+                <a href="forget_password.html" class="forgot-password">Forgot password?</a>
             </div>
             <button  class="login-button"  type="submit" >Login</button>
             <div class="register">
-                <p>Don't have an account? <a href="#">Register here</a></p>
+                <p>Don't have an account? <a href="register.html">Register here</a></p>
             </div>
            
         </form>
     </div>
+    <script src="script.js?v=3" defer></script>
+
  </body>
- </html>
+ </html> 
